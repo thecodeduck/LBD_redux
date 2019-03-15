@@ -1,3 +1,160 @@
 html, * {
-	font-size: 200%;
+	font-size: 120%;
+	-moz-box-sizing: content-box; /* or `border-box` */
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+	font-family: system-ui, sans-serif;
+	font-stretch: normal;
+	font-style: normal;
+	font-variant-numeric: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+::selection {
+  background: #8dff0d; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #8dff0d; /* Gecko Browsers */
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: 99vh;
+
+	background: url('https://images.unsplash.com/photo-1506784693919-ef06d93c28d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h1 {
+	font-size: 2em;
+	font-weight: lighter;
+	color: #d7ede3;
+	margin-bottom: .4em;
+}
+
+form {
+	font-size: 1em;
+}
+
+form:focus, form: active {
+	border: 2px solid red;
+}
+
+button {
+	text-transform: uppercase;
+	border: 0px;
+	border-top-right-radius: 1em;
+	border-bottom-right-radius: 1em;
+	border-top: 2px solid #1c3949;
+	border-right: 2px solid #1c3949;
+	border-bottom: 2px solid #1c3949;
+	width: 1.6em;
+	height: 1.8em;
+	margin: 0;
+	padding: .2em .4em;
+	background-color: #1c3949;
+	color: white;
+	cursor: pointer;
+	outline: none !important;
+}
+
+input {
+	border: 0px;
+	border-top-left-radius: 1em;
+	border-bottom-left-radius: 1em;
+	border-top: 2px solid #fff;
+	border-left: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+	-moz-box-sizing: content-box; /* or `border-box` */
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+	height: 1.8em;
+	width: calc(100%-1.6em);
+	padding: .2em .8em;
+	outline: none !important;
+}
+
+button:focus, button:active {
+	color: #8dff0d;
+}
+input:focus, input:active {
+	border-top: 2px solid rgba(141, 255, 13, 0.5);
+	border-left: 2px solid rgba(141, 255, 13, 0.5);
+	border-bottom: 2px solid rgba(141, 255, 13, 0.5);
+}
+
+section {
+	margin: 1em 0;
+	padding: 0 .4em;
+	background: rgba(2, 22, 22, 0.2);
+	border-bottom: 1px solid #c9d9d2;
+	color: #c9d9d2;
+	border-top-left-radius: .2em;
+	border-top-right-radius: .2em;
+}
+
+a, span {
+	margin-right: 1em;
+	text-decoration: none !important;
+	text-transform: uppercase;
+	font-size: .8em;
+}
+
+a {
+	color: rgba(198, 217, 210, 0.6);
+}
+
+a:focus, a:hover, a:active {
+	color: #8dff0d;
+	outline: none;
+}
+
+#wrapper {
+	text-align: left;
+	max-width: 800px;
+	min-width: 400px;
+}
+
+ul {
+	max-height: 50vh;
+	width: 100%;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+ul::-webkit-scrollbar {
+    display: none;
+}
+
+
+li {
+	margin: .4em .2em;
+	padding: .6em .4em;
+	border-radius: .2em;
+	width: 100%;
+	vertical-align: middle;
+	background: rgba(2, 22, 22, 0.8);
+	color: #c9d9d2;
+	text-overflow: ellipsis;
+	cursor: pointer;
+}
+
+li:before {
+    content:"⚬ ";
 }
