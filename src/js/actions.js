@@ -3,25 +3,28 @@ export const TOGGLE_TODO = 'action:toggleTodo';
 export const SET_VISIBILITY_FILTER = 'action:setVisibilityFilter';
 
 export const VisibilityFilters = {
-	SHOW_ALL: 'vf:showAll',
-	SHOW_COMPLETED: 'vf:showCompleted',
-	SHOW_ACTIVE: 'vf:showActive',
+	SHOW_ALL: 'SHOW_ALL',
+	SHOW_COMPLETED: 'SHOW_COMPLETED',
+	SHOW_ACTIVE: 'SHOW_ACTIVE',
 };
+
+let nextTodoId = 0;
 
 export function addTodo(input) {
 	return {
 		type: ADD_TODO,
 		payload: {
+			id: nextTodoId++,
 			input,
 		},
 	};
 }
 
-export function toggleTodo(index) {
+export function toggleTodo(id) {
 	return {
 		type: TOGGLE_TODO,
 		payload: {
-			index,
+			id,
 		},
 	};
 }

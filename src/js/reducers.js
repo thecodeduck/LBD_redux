@@ -24,13 +24,14 @@ function todos(state = [], { type, payload }) {
 			return [
 				...state,
 				{
+					id: payload.id,
 					text: payload.input,
 					completed: false,
 				},
 			];
 		}
 		case TOGGLE_TODO: {
-			const i = payload.index;
+			const i = payload.id;
 			const newTodos = state.slice();
 			newTodos[i] = {
 				...newTodos[i],

@@ -4,9 +4,12 @@ import Todo from './Todo';
 
 const TodoList = ({ todos, onTodoClick }) => (
 	<ul>
-		{todos.map((todo, index) => (
+		{todos.map((todo, id) => (
 			// eslint-disable-next-line
-			<Todo key={index} {...todo} onClick={() => onTodoClick(index)} />
+			<Todo key={todo.id}
+				{...todo}
+				onClick={() => onTodoClick(id)}
+				/>
 		))}
 	</ul>
 );
