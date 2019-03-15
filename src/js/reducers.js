@@ -4,33 +4,33 @@ import {
 	TOGGLE_TODO,
 	SET_VISIBILITY_FILTER,
 	VisibilityFilters,
-} from '../actions/actions';
+} from './actions';
 
 const { SHOW_ALL } = VisibilityFilters;
 
-function visibilityFilter(state = SHOW_ALL, action) {
-	switch (action.type) {
+function visibilityFilter(state = SHOW_ALL, { type, payload }) {
+	switch (type) {
 		case SET_VISIBILITY_FILTER: {
-			return action.payload.filter;
+			return payload.filter;
 		}
 		default:
 			return state;
 	}
 }
 
-function todos(state = [], action) {
-	switch (action.type) {
+function todos(state = [], { type, payload }) {
+	switch (type) {
 		case ADD_TODO: {
 			return [
 				...state,
 				{
-					text: action.payload.input,
+					text: payload.input,
 					completed: false,
 				},
 			];
 		}
 		case TOGGLE_TODO: {
-			const i = action.payload.index;
+			const i = payload.index;
 			const newTodos = state.slice();
 			newTodos[i] = {
 				...newTodos[i],
